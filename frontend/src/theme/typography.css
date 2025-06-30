@@ -1,0 +1,10 @@
+@theme {
+  --font-body: Inter, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-h1: 2rem;
+  --text-h2: 1.5rem;
+}
