@@ -48,7 +48,7 @@ export const AboutUsCoreServices = () => {
               <h4 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">{service.title}</h4>
               <p className="text-gray-600 dark:text-gray-300 flex-grow">{service.description}</p>
               <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                <span className="text-sm text-primary dark:text-primary-400 font-medium">Learn more →</span>
+                {/* <span className="text-sm text-primary dark:text-primary-400 font-medium">Learn more →</span> */}
               </div>
             </div>
           </div>

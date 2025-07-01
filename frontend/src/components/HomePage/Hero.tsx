@@ -1,9 +1,9 @@
-import { ArrowDown, BookOpenCheck,FileText, Award } from 'lucide-react';
+import { ArrowDown, BookOpenCheck, FileText, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  
+
   const images = [
     {
       light: 'https://www.burgerhuyserattorneys.co.za/wp-content/uploads/2025/02/intellectual-property-lawyer-cost.jpg',
@@ -26,12 +26,25 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Smooth scroll to #services section
+  const scrollToServices = () => {
+    const section = document.getElementById('services');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Navigate to /contact page
+  const goToContact = () => {
+    window.location.href = '/contact';
+  };
+
   return (
     <section className="relative py-10 w-full overflow-hidden bg-slate-300 dark:bg-gray-950 transition-colors duration-500">
       {/* Background Images with Fade Effect */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
-          <div 
+          <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImage ? 'opacity-100' : 'opacity-0'}`}
           >
@@ -53,26 +66,34 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24">
         <div className="max-w-4xl">
-
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             <span className="text-primary dark:text-primary-400 transition-colors duration-300">Strategic</span>{' '}
             <span className="bg-gradient-to-r from-primary to-primary dark:from-primary-800 dark:to-primary-300 bg-clip-text text-transparent">
               Legal Protection
             </span>
           </h1>
-          
+
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl leading-relaxed transition-colors duration-300">
             Comprehensive legal solutions in Intellectual Property, Litigation, and Notarial Services.
             Partner with Rwanda's most trusted legal advisors.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <button className="group bg-primary hover:bg-primary/90 dark:bg-primary-600 dark:hover:bg-primary-500 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+            {/* Book Consultation Button */}
+            <button
+              onClick={goToContact}
+              className="group bg-gradient-to-r from-lime-400 to-green-500 hover:from-lime-800 hover:to-green-600 dark:from-lime-600 dark:to-green-700 dark:hover:from-lime-700 dark:hover:to-green-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg cursor-pointer hover:shadow-xl"
+            >
               <BookOpenCheck className="w-5 h-5" />
               Book Consultation
               <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </button>
-            <button onClick={() => {window.location.href = '/#services'}} className="bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 text-gray-800 dark:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg border border-white/20 dark:border-gray-700 backdrop-blur-sm">
+
+            {/* Our Services Button */}
+            <button
+              onClick={scrollToServices}
+              className="bg-gradient-to-r from-white/90 to-white/70 hover:from-white/100 hover:to-white/90 dark:from-gray-800/90 dark:to-gray-700/80 dark:hover:from-gray-900/100 cursor-pointer dark:hover:to-gray-800/90 text-gray-800 dark:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg border border-white/20 dark:border-gray-700 backdrop-blur-sm"
+            >
               Our Services
             </button>
           </div>
@@ -80,14 +101,15 @@ const Hero = () => {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
             {[
-              { icon: <FileText className="w-6 h-6" />, value: "100%", label: "Client Focus" },
-              { icon: <Award className="w-6 h-6" />, value: "4", label: "Practice Areas" }
+              { icon: <FileText className="w-6 h-6" />, value: '100%', label: 'Client Focus' },
+              { icon: <Award className="w-6 h-6" />, value: '4', label: 'Practice Areas' }
             ].map((stat, index) => (
-              <div key={index} className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-md p-4 rounded-xl border border-white/20 dark:border-gray-700/50 shadow-sm transition-colors duration-300">
+              <div
+                key={index}
+                className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-md p-4 rounded-xl border border-white/20 dark:border-gray-700/50 shadow-sm transition-colors duration-300"
+              >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg text-primary dark:text-primary-400">
-                    {stat.icon}
-                  </div>
+                  <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg text-primary dark:text-primary-400">{stat.icon}</div>
                   <div>
                     <div className="font-bold text-primary">{stat.value}</div>
                     <div className="text-xs text-gray-600 dark:text-gray-400">{stat.label}</div>
@@ -98,8 +120,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-
     </section>
   );
 };
