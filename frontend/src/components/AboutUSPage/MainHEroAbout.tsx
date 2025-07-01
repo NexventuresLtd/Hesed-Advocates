@@ -2,7 +2,7 @@ import { Heart, Briefcase, Users, FileText } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[70vh]  flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 overflow-hidden transition-colors duration-500">
+    <section className="relative min-h-[70vh] py-4 flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 overflow-hidden transition-colors duration-500">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="hidden dark:block absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
