@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight, HelpCircle } from 'lucide-react';
 
 export default function ProcessSection() {
