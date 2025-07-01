@@ -1,10 +1,26 @@
 import React, { useState } from 'react';
-import { X, Award, Briefcase, Users, Globe, BookOpen, Calendar, XCircle } from 'lucide-react';
+import { X, Award, Briefcase, Users, Globe, BookOpen, Calendar } from 'lucide-react';
+type TeamMember = {
+  name: string;
+  role: string;
+  bio: string;
+  img: string;
+  bgLight: string;
+  bgDark: string;
+  experience: string;
+  description: string;
+  achievements: string[];
+  background?: string;
+  expertise: string[];
+  interests: string[];
+  events: string[];
+  memberships?: string[];
+};
 
 const OurTeamSection: React.FC = () => {
-  const [selectedMember, setSelectedMember] = useState<any>(null);
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     {
       name: "Alain Didier Muhizi",
       role: "Managing Partner",
@@ -69,7 +85,7 @@ const OurTeamSection: React.FC = () => {
     }
   ];
 
-  const openModal = (member: any) => {
+  const openModal = (member: TeamMember) => {
     setSelectedMember(member);
     document.body.style.overflow = 'hidden';
   };

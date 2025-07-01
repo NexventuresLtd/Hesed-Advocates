@@ -4,7 +4,7 @@ import { X, Scale, Shield, FileText, Users, Search, Edit3, Calendar, Mic, ArrowR
 type Service = {
   id: string;
   title: string;
-  icon: React.ComponentType<{ size?: number }>;
+  icon: React.ComponentType<{ className?: string }>;
   description: string;
   gradient: string;
   details: {
@@ -20,79 +20,78 @@ const ServicesComponent = () => {
   const coreServices: Service[] = [
     {
       id: 'ip',
-      title: 'Intellectual Property Services',
+      title: 'Intellectual Property',
       icon: Shield,
-      description: 'Comprehensive IP protection and enforcement strategies for your innovations and brand assets.',
-      gradient: 'from-blue-600 to-blue-800',
+      description: 'Protection and enforcement for your innovations and brand assets',
+      gradient: 'from-blue-500 to-blue-600',
       details: {
-        overview: 'We help protect your innovations, ideas, and brand assets through comprehensive IP services, both at the national and regional level.',
+        overview: 'We help protect your innovations, ideas, and brand assets through comprehensive IP services.',
         services: [
-          'Trademark registration and enforcement (Rwanda, ARIPO, OAPI, and WIPO)',
-          'Patent applications and protection strategies',
-          'Copyright protection and enforcement',
-          'Trade secret and industrial design protection',
+          'Trademark registration and enforcement',
+          'Patent applications and protection',
+          'Copyright protection',
+          'Trade secret and industrial design',
           'IP audits and due diligence',
-          'IP litigation and dispute resolution',
-          'IP strategy for startups, creatives, and corporates'
+          'IP litigation and dispute resolution'
         ],
         expertise: 'Our IP practice is led by experts with strong institutional and private sector experience.'
       }
     },
     {
       id: 'litigation',
-      title: 'Litigation & Dispute Resolution',
+      title: 'Litigation',
       icon: Scale,
-      description: 'Strategic litigation representation for complex disputes across multiple jurisdictions.',
-      gradient: 'from-purple-600 to-purple-800',
+      description: 'Strategic representation for complex disputes',
+      gradient: 'from-purple-500 to-purple-600',
       details: {
-        overview: 'We represent clients before courts and arbitration panels, delivering smart and assertive litigation strategies for complex disputes.',
+        overview: 'We represent clients before courts and arbitration panels with smart litigation strategies.',
         services: [
           'Commercial disputes',
           'Labor and employment matters',
           'Civil claims',
           'Contract enforcement',
-          'Intellectual property disputes',
-          'Administrative and regulatory matters',
-          'Mediation and out-of-court settlement support'
+          'IP disputes',
+          'Administrative matters'
         ],
-        expertise: 'We prioritize risk management, clarity, and client outcomes at every stage.'
+        expertise: 'We prioritize risk management and client outcomes at every stage.'
       }
     },
     {
       id: 'notary',
-      title: 'Private Notary Services',
+      title: 'Notary Services',
       icon: FileText,
-      description: 'Certified notarization services for businesses and individuals with legal compliance.',
-      gradient: 'from-green-600 to-green-800',
+      description: 'Certified notarization with legal compliance',
+      gradient: 'from-green-500 to-green-600',
       details: {
-        overview: 'As certified notaries, we provide legally recognized notarization of key documents for businesses and individuals.',
+        overview: 'We provide legally recognized notarization of key documents.',
         services: [
-          'Authentication of contracts and agreements',
-          'Certification of deeds, affidavits, and declarations',
+          'Authentication of contracts',
+          'Certification of deeds and affidavits',
           'Powers of attorney',
-          'Company documents and board resolutions',
-          'Property transactions and legal certifications',
-          'Cross-border notarization needs'
+          'Company documents',
+          'Property transactions',
+          'Cross-border notarization'
         ],
-        expertise: 'We ensure every notarial transaction is handled with precision, confidentiality, and legal compliance.'
+        expertise: 'Handled with precision, confidentiality, and legal compliance.'
       }
     },
     {
       id: 'advisory',
-      title: 'Strategic Legal & Policy Advisory',
+      title: 'Legal Advisory',
       icon: Users,
-      description: 'Expert guidance for organizations navigating complex institutional environments.',
-      gradient: 'from-orange-600 to-orange-800',
+      description: 'Guidance for complex institutional environments',
+      gradient: 'from-orange-500 to-orange-600',
       details: {
-        overview: 'We support organizations, associations, and institutions with legal and policy guidance that informs decision-making and shapes outcomes.',
+        overview: 'We support organizations with legal and policy guidance.',
         services: [
-          'Legal audits and institutional compliance reviews',
-          'Policy analysis and regulatory positioning',
-          'Advisory services for business associations',
-          'Representation in legal reform or policy dialogue processes',
-          'Risk advisory and strategic legal planning'
+          'Legal audits and compliance',
+          'Policy analysis',
+          'Business association advisory',
+          'Legal reform representation',
+          'Risk advisory',
+          'Strategic legal planning'
         ],
-        expertise: 'We leverage our background in legal reform, policy engagement, and business law to guide clients navigating complex institutional environments.'
+        expertise: 'We leverage our background in legal reform and policy engagement.'
       }
     }
   ];
@@ -100,110 +99,107 @@ const ServicesComponent = () => {
   const complementaryServices: Service[] = [
     {
       id: 'research',
-      title: 'Legal Research & Analysis',
+      title: 'Legal Research',
       icon: Search,
-      description: 'Thorough legal research to support case development, advocacy work, and policy formulation.',
-      gradient: 'from-teal-600 to-teal-800',
+      description: 'Thorough research for case development and policy',
+      gradient: 'from-teal-500 to-teal-600',
       details: {
-        overview: 'We conduct thorough legal research to support case development, advocacy work, policy formulation, or legal publications.',
+        overview: 'We conduct thorough legal research to support cases and policy.',
         services: [
-          'Case development research',
-          'Policy formulation support',
-          'Legal publication assistance',
-          'Advocacy work research',
+          'Case development',
+          'Policy formulation',
+          'Legal publications',
+          'Advocacy research',
           'Regulatory analysis',
-          'Comparative legal studies'
+          'Comparative studies'
         ],
-        expertise: 'Our research is rigorous, relevant, and strategically aligned with the client\'s objectives.'
+        expertise: 'Our research is rigorous and strategically aligned.'
       }
     },
     {
       id: 'content',
-      title: 'Strategic Content Development',
+      title: 'Content Development',
       icon: Edit3,
-      description: 'Professional legal documents and communication materials that bridge law and strategic messaging.',
-      gradient: 'from-indigo-600 to-indigo-800',
+      description: 'Legal documents and strategic messaging',
+      gradient: 'from-indigo-500 to-indigo-600',
       details: {
-        overview: 'We assist clients in crafting professional legal documents and communication materials, bridging the gap between legal expertise and strategic messaging.',
+        overview: 'We craft professional legal documents and communications.',
         services: [
           'Position papers',
           'Policy briefs',
           'Advocacy messages',
-          'Legal branding and profile building',
-          'Proposals and institutional reports',
-          'Strategic communication planning'
+          'Legal branding',
+          'Institutional reports',
+          'Communication planning'
         ],
-        expertise: 'This service bridges the gap between legal expertise and strategic messaging.'
+        expertise: 'Bridges legal expertise and strategic messaging.'
       }
     },
     {
       id: 'events',
       title: 'Event Organization',
       icon: Calendar,
-      description: 'High-impact legal and policy events that foster engagement, visibility, and influence.',
-      gradient: 'from-pink-600 to-pink-800',
+      description: 'High-impact legal and policy events',
+      gradient: 'from-pink-500 to-pink-600',
       details: {
-        overview: 'We organize and coordinate high-impact legal and policy events that foster engagement, visibility, and influence.',
+        overview: 'We organize impactful legal and policy events.',
         services: [
-          'Policy forums and public-private dialogues',
-          'Legal workshops and advocacy roundtables',
-          'Institutional meetings and strategic launches',
-          'Sector consultations and regulatory engagement events',
-          'Conference planning and coordination',
-          'Stakeholder engagement events'
+          'Policy forums',
+          'Legal workshops',
+          'Institutional meetings',
+          'Sector consultations',
+          'Conference planning',
+          'Stakeholder events'
         ],
-        expertise: 'We ensure every event delivers maximum impact and engagement for our clients.'
+        expertise: 'We ensure every event delivers maximum impact.'
       }
     },
     {
       id: 'moderation',
-      title: 'Moderation & Facilitation',
+      title: 'Moderation',
       icon: Mic,
-      description: 'Professional moderation services for high-level events and strategic discussions.',
-      gradient: 'from-red-600 to-red-800',
+      description: 'Professional facilitation for discussions',
+      gradient: 'from-red-500 to-red-600',
       details: {
-        overview: 'We offer professional moderation services for high-level events, helping institutions ensure well-structured and impactful discussions.',
+        overview: 'We moderate high-level events and discussions.',
         services: [
           'Policy forums',
           'Legal conferences',
-          'Private sector roundtables',
-          'Cross-sector stakeholder dialogues',
-          'Board meetings facilitation',
-          'Strategic planning sessions'
+          'Roundtables',
+          'Stakeholder dialogues',
+          'Board meetings',
+          'Planning sessions'
         ],
-        expertise: 'We bring clarity, neutrality, and engagement to every platform we lead.'
+        expertise: 'We bring clarity and engagement to every platform.'
       }
     }
   ];
 
-  const ServiceCard = ({ service, onClick }: { service: Service; onClick: (service: Service) => void }) => {
+  const ServiceCard = ({ service }: { service: Service }) => {
     const Icon = service.icon;
     return (
       <div 
-        className="group relative bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-8 transition-all duration-300 hover:border-primary/50 dark:hover:border-primary/400 hover:-translate-y-1 cursor-pointer"
-        onClick={() => onClick(service)}
+        className="group bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 transition-all duration-300 hover:border-primary/50 dark:hover:border-primary/400 cursor-pointer h-full flex flex-col"
+        onClick={() => setSelectedService(service)}
       >
-        <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 dark:group-hover:opacity-10 transition-opacity duration-300 rounded-xl`}></div>
-        <div className="relative z-10">
-          <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300`}>
-            <Icon size={24}  />
-          </div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
-            {service.title}
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-6 transition-colors duration-300">
-            {service.description}
-          </p>
-          <div className="flex items-center text-primary dark:text-primary-400 font-medium group-hover:text-primary/80 dark:group-hover:text-primary-300 transition-colors duration-300">
-            <span>Learn more</span>
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-          </div>
+        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300`}>
+          <Icon className="w-6 h-6 text-white" />
+        </div>
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+          {service.title}
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm transition-colors duration-300 flex-grow">
+          {service.description}
+        </p>
+        <div className="flex items-center text-primary dark:text-primary-400 text-sm font-medium group-hover:text-primary/80 dark:group-hover:text-primary-300 transition-colors duration-300">
+          <span>Learn more</span>
+          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
         </div>
       </div>
     );
   };
 
-  const ServicePopup = ({ service, onClose }: { service: Service | null; onClose: () => void }) => {
+  const ServiceModal = ({ service, onClose }: { service: Service | null; onClose: () => void }) => {
     if (!service) return null;
     
     const Icon = service.icon;
@@ -211,49 +207,49 @@ const ServicesComponent = () => {
     return (
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50" onClick={onClose}>
         <div 
-          className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl border border-gray-200 dark:border-gray-700"
+          className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className={`bg-gradient-to-br ${service.gradient} text-white p-8 rounded-t-2xl`}>
+          <div className={`bg-gradient-to-br ${service.gradient} text-white p-6 rounded-t-2xl`}>
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
-                  <Icon  />
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Icon className="w-6 h-6" />
                 </div>
-                <h2 className="text-3xl font-bold">{service.title}</h2>
+                <h2 className="text-2xl font-bold">{service.title}</h2>
               </div>
               <button 
                 onClick={onClose}
-                className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
+                className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
             </div>
           </div>
           
-          <div className="p-8">
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Overview</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="p-6">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Overview</h3>
+              <p className="text-gray-700 dark:text-gray-300">
                 {service.details.overview}
               </p>
             </div>
             
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Our Services Include</h3>
-              <ul className="space-y-4">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Services Include</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {service.details.services.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-br ${service.gradient} mt-2 mr-4 flex-shrink-0`}></div>
-                    <p className="text-gray-700 dark:text-gray-300">{item}</p>
-                  </li>
+                  <div key={index} className="flex items-start">
+                    <div className={`w-2 h-2 rounded-full bg-gradient-to-br ${service.gradient} mt-2 mr-3 flex-shrink-0`}></div>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">{item}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
             
-            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6 border border-gray-200 dark:border-gray-600">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Our Expertise</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Our Expertise</h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
                 {service.details.expertise}
               </p>
             </div>
@@ -264,99 +260,87 @@ const ServicesComponent = () => {
   };
 
   return (
-    <section className="relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950">
+    <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-400 px-4 py-2 rounded-full text-sm font-medium border border-primary/20 dark:border-primary/30 mb-6 mx-auto transition-colors duration-300">
-            Legal Excellence
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-400 px-4 py-2 rounded-full text-sm font-medium border border-primary/20 dark:border-primary/30 mb-6 mx-auto">
+            Legal Services
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
-            Comprehensive <span className="text-primary dark:text-primary-400">Legal Services</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            Comprehensive <span className="text-primary dark:text-primary-400">Legal Solutions</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed transition-colors duration-300">
-            Strategic solutions, trusted counsel, and long-term legal partnerships tailored for businesses, institutions, and individuals.
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Strategic counsel and services tailored for businesses, institutions, and individuals
           </p>
         </div>
 
-        {/* Core Services Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12 transition-colors duration-300">
+        {/* Core Services */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             Core Practice Areas
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreServices.map((service) => (
-              <ServiceCard 
-                key={service.id} 
-                service={service} 
-                onClick={setSelectedService}
-              />
+              <ServiceCard key={service.id} service={service} />
             ))}
           </div>
         </div>
 
-        {/* Complementary Services Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-4 transition-colors duration-300">
+        {/* Complementary Services */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             Complementary Services
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 text-center mb-12 max-w-3xl mx-auto transition-colors duration-300">
-            Specialized services that add strategic value and ensure law and communication work hand-in-hand.
+          <p className="text-gray-600 dark:text-gray-300 text-center mb-8 max-w-3xl mx-auto">
+            Specialized services that enhance your legal strategy
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {complementaryServices.map((service) => (
-              <ServiceCard 
-                key={service.id} 
-                service={service} 
-                onClick={setSelectedService}
-              />
+              <ServiceCard key={service.id} service={service} />
             ))}
           </div>
         </div>
 
-        {/* Why Choose Us Section */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 transition-colors duration-500">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-8 transition-colors duration-300">
-            Why Choose Hesed Advocates Ltd
+        {/* Why Choose Us */}
+        <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            Why Choose Our Firm
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-2xl">30+</span>
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold">30+</span>
               </div>
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">Years Experience</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Combined experience across law, policy, and strategic engagement</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Combined legal expertise</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">Trusted Partner</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Trusted by institutions, associations, and private clients</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">For institutions and businesses</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">Multilingual</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Service delivery in English, Kinyarwanda and French</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">English, French, Kinyarwanda</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-orange-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Scale className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-bold text-gray-900 dark:text-white mb-2">Client-Centered</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Recognized for integrity, clarity, and client-centered service</p>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">Client Focus</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Tailored solutions</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Service Detail Popup */}
-      <ServicePopup 
-        service={selectedService} 
-        onClose={() => setSelectedService(null)} 
-      />
+      <ServiceModal service={selectedService} onClose={() => setSelectedService(null)} />
     </section>
   );
 };
