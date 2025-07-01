@@ -1,7 +1,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #00FF0;      /* Your bright green-yellow */
+  --color-primary: #00FF00;      /* Your bright green-yellow */
   --color-background: #ffff;   /* White background */
   --color-text: #000000;         /* Black text */
   --color-muted: #a0a0a0;        /* Gray for muted text or borders */
