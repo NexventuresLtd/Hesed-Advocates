@@ -4,6 +4,7 @@ import HomePage from '../features/HomePage';
 import AboutPage from '../features/AboutPage';
 import OurTeamSection from '../components/HomePage/TeamSEction';
 import ServicesComponent from '../features/ServicesPage';
+import Contact from '../components/AboutUSPage/Contact';
 
 export const AppRoutes = () => {
   return (
@@ -13,6 +14,8 @@ export const AppRoutes = () => {
         <Route path="team" element={<OurTeamSection />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="services" element={<ServicesComponent />} />
+        <Route path="contact" element={<Contact/>} />
+        {/* Add more routes as needed */}
       </Route>
     </Routes>
   );

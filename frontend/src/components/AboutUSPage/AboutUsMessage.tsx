@@ -1,4 +1,4 @@
-import { Globe, Award, Briefcase, Languages, Calendar } from 'lucide-react';
+import { Globe, Award, Briefcase } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -17,25 +17,22 @@ export default function AboutSection() {
             </div>
             
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight transition-colors duration-300">
-              <span className="text-primary dark:text-primary-400">Strategic Legal Partners</span>{' '}
-              in Rwanda
+              <span className="text-primary dark:text-primary-400">About Hesed Advocates Ltd</span>
             </h2>
             
             <div className="space-y-6">
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
-                We believe that law should not only protect but also empower. From startups and 
-                established companies to institutions, business associations, and individuals, 
-                we serve a wide range of clients with precision, professionalism, and strategic insight.
+                Hesed Advocates Ltd is a full-service law firm based in Kigali, Rwanda, offering tailored legal solutions in Intellectual Property, Litigation, Private Notary Services, and Strategic Legal and Policy Advisory.
+Established in 2018, the firm was founded by experienced legal professionals committed to delivering clear, practical, and client-focused legal support.
+
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
-                Our multidisciplinary approach allows us to serve as more than just legal 
-                representatives — we become long-term partners in helping clients navigate 
-                legal frameworks, influence change, and achieve sustainable impact.
+               We believe that law should not only protect but also empower. From startups and established companies to institutions, business associations, and individuals, we serve a wide range of clients with precision, professionalism, and strategic insight.
               </p>
             </div>
             
             {/* Stats Grid */}
-            <div className="grid grid-cols-3 gap-4">
+            {/* <div className="grid grid-cols-3 gap-4">
               {[
                 { icon: <Briefcase className="w-6 h-6" />, value: "30+", label: "Years Experience" },
                 { icon: <Languages className="w-6 h-6" />, value: "3", label: "Languages" },
@@ -51,7 +48,7 @@ export default function AboutSection() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
           
           {/* Right Column - Language Section */}

@@ -1,4 +1,4 @@
-import { ArrowDown, BookOpenCheck, Scale, Briefcase, Users, FileText, Award } from 'lucide-react';
+import { ArrowDown, BookOpenCheck,FileText, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
@@ -6,16 +6,16 @@ const Hero = () => {
   
   const images = [
     {
-      light: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
-      dark: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+      light: 'https://www.burgerhuyserattorneys.co.za/wp-content/uploads/2025/02/intellectual-property-lawyer-cost.jpg',
+      dark: 'https://www.burgerhuyserattorneys.co.za/wp-content/uploads/2025/02/intellectual-property-lawyer-cost.jpg'
     },
     {
-      light: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
-      dark: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+      light: 'https://pmattorneys.co.za/wp-content/uploads/2022/04/COMMERCIAL-LAW-ATTORNEYS.jpg',
+      dark: 'https://pmattorneys.co.za/wp-content/uploads/2022/04/COMMERCIAL-LAW-ATTORNEYS.jpg'
     },
     {
-      light: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
-      dark: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+      light: 'https://pdxsigning.com/wp-content/uploads/2022/05/image-2.png',
+      dark: 'https://pdxsigning.com/wp-content/uploads/2022/05/image-2.png'
     }
   ];
 
@@ -27,7 +27,7 @@ const Hero = () => {
   }, [images.length]);
 
   return (
-    <section className="relative py-10 w-full overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-500">
+    <section className="relative py-10 w-full overflow-hidden bg-slate-300 dark:bg-gray-950 transition-colors duration-500">
       {/* Background Images with Fade Effect */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
@@ -53,10 +53,6 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-3 bg-primary/80 dark:bg-primary/90 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary/20 dark:border-primary/30 transition-colors duration-300">
-            <Scale className="w-4 h-4" />
-            <span>Trusted Since 2018</span>
-          </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             <span className="text-primary dark:text-primary-400 transition-colors duration-300">Strategic</span>{' '}
@@ -84,10 +80,8 @@ const Hero = () => {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
             {[
-              { icon: <Briefcase className="w-6 h-6" />, value: "30+", label: "Years Experience" },
-              { icon: <Users className="w-6 h-6" />, value: "500+", label: "Clients Served" },
               { icon: <FileText className="w-6 h-6" />, value: "100%", label: "Client Focus" },
-              { icon: <Award className="w-6 h-6" />, value: "3", label: "Practice Areas" }
+              { icon: <Award className="w-6 h-6" />, value: "4", label: "Practice Areas" }
             ].map((stat, index) => (
               <div key={index} className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-md p-4 rounded-xl border border-white/20 dark:border-gray-700/50 shadow-sm transition-colors duration-300">
                 <div className="flex items-center gap-3">

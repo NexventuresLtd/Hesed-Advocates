@@ -16,7 +16,7 @@ export const AboutUsWhatToExpect = () => {
     {
       icon: <Lightbulb className="w-5 h-5" />,
       title: "Creatives & Innovators",
-      description: "Secure your inventions, ideas, or creative content"
+      description: "Strategic Advisory & Complementary Services"
     },
     {
       icon: <User className="w-5 h-5" />,

@@ -4,7 +4,7 @@ export default function AAboutUsText() {
       {/* Background image for title */}
       <div className="absolute inset-0 z-0 opacity-2 dark:opacity-20">
         <img 
-          src="https://blog.puc.edu/wp-content/uploads/2025/01/AdobeStock_387176470.jpeg" // Replace with your image path
+          src="https://africa.unwomen.org/sites/default/files/styles/webp_only/public/2024-12/ocha_alioune_ndiaye.jpg.webp?itok=KCC_2ewr"
           alt="Legal background"
           className="w-full h-full object-cover"
         />
@@ -35,7 +35,7 @@ export default function AAboutUsText() {
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-[url('/law-texture.jpg')] bg-cover bg-center opacity-20 rounded-xl"></div>
               <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 dark:from-gray-100 to-gray-600 dark:to-gray-400 px-6 py-4">
-                Bespoke Legal Strategies for Discerning Clients
+                Protecting What Matters. Enabling What’s Next.
               </h2>
             </div>
           </div>
@@ -43,7 +43,11 @@ export default function AAboutUsText() {
           {/* Description content */}
           <div className="lg:w-1/2 space-y-8">
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
-              Hesed Advocates Ltd is a premier full-service law firm based in Kigali, Rwanda, specializing in sophisticated legal solutions across Intellectual Property, Complex Litigation, Private Notary Services, and Strategic Legal Advisory.
+              We go beyond legal services — offering trusted expertise in Intellectual Property, Litigation, Notarial Services, and Strategic Advisory grounded in legal and policy insight.               
+              <br />
+              <span className="text-gray-300 dark:text-primary-400 font-semibold">
+              Book a Consultation | Explore Our Services
+              </span>
             </p>
 
             {/* Luxury divider */}
@@ -52,7 +56,8 @@ export default function AAboutUsText() {
             </div>
 
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
-              We champion a philosophy where law becomes an instrument of empowerment. Our tailored counsel elevates startups to industry leaders through precision, discretion, and visionary legal strategy.
+              Hesed Advocates Ltd is a Rwanda-based law firm providing tailored legal solutions in Intellectual Property, Litigation, Private Notary Services, and Strategic Legal and Policy Advisory. Founded by a team of experienced lawyers, we combine legal excellence with strategic insight to help clients protect their rights, resolve disputes, and navigate complex legal frameworks. We serve individuals, businesses, institutions, and associations with a commitment to clarity, professionalism, and results.
+
             </p>
           </div>
         </div>

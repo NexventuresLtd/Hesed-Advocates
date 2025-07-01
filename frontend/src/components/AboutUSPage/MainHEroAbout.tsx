@@ -64,7 +64,7 @@ export default function HeroSection() {
           <div className="relative hidden lg:block">
             <div className="relative bg-white/70 dark:bg-gray-800/50 backdrop-blur-md rounded-3xl p-2 border border-gray-200 dark:border-gray-700 transition-colors duration-500">
               <img 
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="https://www.shutterstock.com/image-photo/portrait-black-woman-meeting-colleagues-600nw-2473319823.jpg" 
                 alt="Legal team collaborating"
                 className="w-full h-[500px] object-cover rounded-2xl"
               />
