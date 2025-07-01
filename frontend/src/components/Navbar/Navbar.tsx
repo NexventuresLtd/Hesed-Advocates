@@ -12,9 +12,9 @@ const navItems: NavItem[] = [
   },
   { 
     label: 'Services', 
-    href: '#services',
+    href: '/services',
   },
-  { label: 'Our Team', href: '#team' },
+  { label: 'Our Team', href: '/team' },
   { label: 'Contact', href: '#contact' },
 ];
 
