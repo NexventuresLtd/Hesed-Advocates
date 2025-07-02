@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   X,
   Award,
@@ -10,6 +10,9 @@ import {
   Sparkles,
   Star,
   Mail,
+  ChevronRight,
+  Linkedin,
+  Twitter,
 } from "lucide-react";
 
 // --------------------------------------
@@ -33,6 +36,8 @@ type TeamMember = {
   events: string[];
   memberships?: string[];
   signature?: string;
+  linkedin?: string;
+  twitter?: string;
 };
 
 // --------------------------------------
@@ -62,6 +67,11 @@ const FloatingElements = () => {
 const OurTeamSection: React.FC = () => {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [activeTab, setActiveTab] = useState("about");
+  const modalContentRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   // Track mouse for parallax effect
   useEffect(() => {
@@ -76,6 +86,15 @@ const OurTeamSection: React.FC = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Handle modal overflow
+  useEffect(() => {
+    if (selectedMember) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [selectedMember]);
+
   // Team data
   const teamMembers: TeamMember[] = [
     {
@@ -85,6 +104,8 @@ const OurTeamSection: React.FC = () => {
       img: "/Alain_Didier.png",
       signature: "/mysignaturewhite.png",
       email: "muhizi@hesedadvocates.com",
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
       bgLight:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=640&q=60",
       bgDark:
@@ -127,6 +148,7 @@ const OurTeamSection: React.FC = () => {
       role: "Executive Partner",
       bio: "Intellectual Property Expert | Certified Private Notary | Strategic Legal Advisor",
       email: "mwiseneza@hesedadvocates.com",
+      linkedin: "https://linkedin.com",
       img: "/Alain_Fabrice.png",
       bgLight:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=640&q=60",
@@ -159,6 +181,7 @@ const OurTeamSection: React.FC = () => {
       role: "Senior Partner",
       bio: "Senior Litigation Counsel | Commercial & Employment Law Expert | Strategic Legal Advisor",
       email: "ingenzi@hesedadvocates.com",
+      linkedin: "https://linkedin.com",
       img: "/Felix.jpeg",
       bgLight:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=640&q=60",
@@ -195,12 +218,34 @@ const OurTeamSection: React.FC = () => {
 
   const openModal = (member: TeamMember) => {
     setSelectedMember(member);
-    document.body.style.overflow = "hidden";
+    setActiveTab("about");
   };
 
   const closeModal = () => {
     setSelectedMember(null);
-    document.body.style.overflow = "unset";
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!modalContentRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - modalContentRef.current.offsetLeft);
+    setScrollLeft(modalContentRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !modalContentRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - modalContentRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    modalContentRef.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
@@ -236,6 +281,10 @@ const OurTeamSection: React.FC = () => {
           from { transform: translateY(50px); opacity: 0; }
           to { transform: translateY(0); opacity: 1; }
         }
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
         
         .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
         .animate-float-medium { animation: float-medium 4s ease-in-out infinite; }
@@ -248,10 +297,20 @@ const OurTeamSection: React.FC = () => {
         }
         .animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
         .animate-slide-in-up { animation: slide-in-up 0.8s ease-out forwards; }
+        .animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
         
         .parallax-element {
           transform: translate3d(0, 0, 0);
           transition: transform 0.1s ease-out;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `,
         }}
@@ -276,7 +335,7 @@ const OurTeamSection: React.FC = () => {
         {/* Mesh gradient background */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lime-300/5 to-transparent dark:via-lime-300/5" />
 
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-full md:max-w-11/12 m-auto">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-full md:max-w-11/12 mx-auto">
           <div className="text-center mb-16 animate-slide-in-up">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="flex items-center gap-2">
@@ -310,6 +369,18 @@ const OurTeamSection: React.FC = () => {
             </div>
           </div>
 
+          {/* Team Introduction */}
+          <div className="max-w-4xl mx-auto mb-16 px-4">
+            <div className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                At Hesed Advocates Ltd, our strength lies in the depth of our expertise and the diversity of our legal insight. Our team is composed of seasoned legal professionals with a proven track record in Intellectual Property, Litigation, Notarial Services, and Strategic Legal & Policy Advisory.
+              </p>
+              <p className="mt-4 text-gray-600 dark:text-gray-400">
+                We are not just lawyers, we are trusted advisors, negotiators, reformers, and problem-solvers. With over 30 years of combined experience, our partners bring together technical excellence, strategic thinking, and active listening to deliver legal solutions that are both effective and client-centered.
+              </p>
+            </div>
+          </div>
+
           {/* Card Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {teamMembers.map((member, index) => (
@@ -325,24 +396,9 @@ const OurTeamSection: React.FC = () => {
                   <div className="dark:hidden absolute inset-0 bg-gray-100" />
                 </div>
 
-                {/* Overlay */}
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent dark:from-gray-900/80" /> */}
-
                 {/* Hover arrow */}
                 <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg
-                    className="w-4 h-4 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <ChevronRight className="w-4 h-4 text-white" />
                 </div>
 
                 {/* Portrait */}
@@ -366,43 +422,21 @@ const OurTeamSection: React.FC = () => {
                     <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
                       {member.bio}
                     </p>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-sm rounded-full text-white text-sm font-medium hover:dark:bg-white/20 hover:bg-black/60 transition-colors duration-200">
-                      <span>View Profile</span>
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    <div className="flex justify-center gap-3">
+                      <button className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-sm rounded-full text-white text-sm font-medium hover:dark:bg-white/20 hover:bg-black/60 transition-colors duration-200">
+                        <span>View Profile</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.location.href = `mailto:${member.email}`;
+                        }}
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-lime-600/60 backdrop-blur-sm rounded-full text-white text-sm font-medium hover:bg-lime-600/80 transition-colors duration-200"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.location.href = `mailto:${member.email}`;
-                      }}
-                      className="inline-flex items-center ml-4 gap-2 px-4 py-2 bg-primary/60 backdrop-blur-sm rounded-full text-white text-sm font-medium hover:bg-primary/80 transition-colors duration-200"
-                    >
-                      <span>Contact</span>
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                        <span>Contact</span>
+                        <Mail className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -412,129 +446,260 @@ const OurTeamSection: React.FC = () => {
         </div>
       </section>
 
+      {/* Modal */}
       {selectedMember && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
+          onClick={closeModal}
+        >
           <div
-            className="relative bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex"
+            className="relative bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex flex-col lg:flex-row"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Left: Portrait */}
-            <div className="w-1/3 relative">
-              <img
-                src={selectedMember.img}
-                alt={selectedMember.name}
-                className="w-full h-full object-cover"
-              />
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 p-2 bg-lime-300/70 backdrop-blur-sm rounded-full text-white hover:bg-lime-300/30"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+            {/* Close button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-50 p-2 bg-lime-300/70 backdrop-blur-sm rounded-full text-white hover:bg-lime-300/30 transition-colors duration-200"
+            >
+              <X className="w-5 h-5" />
+            </button>
 
-            {/* Right: Content */}
-            <div className="w-2/3 overflow-y-auto max-h-[90vh]">
-              <div className="p-8 space-y-8">
-                {/* Header */}
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+            {/* Left: Portrait */}
+            <div className="w-full lg:w-1/3 relative bg-gray-100 dark:bg-gray-800">
+              <div className="h-64 lg:h-full w-full relative">
+                <img
+                  src={selectedMember.img}
+                  alt={selectedMember.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                  <h2 className="text-2xl font-bold text-white">
                     {selectedMember.name}
                   </h2>
-                  <p className="text-lg text-lime-300 dark:text-lime-300 font-medium">
+                  <p className="text-lime-300 font-medium">
                     {selectedMember.role}
                   </p>
-                  <p className="text-gray-600 dark:text-gray-400 mt-2">
+                  <p className="text-gray-300 text-sm mt-2">
                     {selectedMember.bio}
                   </p>
                 </div>
+              </div>
 
-                {/* About */}
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <BookOpen className="w-5 h-5 text-lime-300 dark:text-lime-300" />
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      About
-                    </h3>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {selectedMember.description}
-                  </p>
+              {/* Social links */}
+              <div className="p-4 bg-gray-50 dark:bg-gray-800/50 flex justify-center gap-4">
+                <a
+                  href={`mailto:${selectedMember.email}`}
+                  className="p-2 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-lime-300 dark:hover:bg-lime-300/30 transition-colors"
+                  title="Email"
+                >
+                  <Mail className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                </a>
+                {selectedMember.linkedin && (
+                  <a
+                    href={selectedMember.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-blue-500 dark:hover:bg-blue-500/30 transition-colors"
+                    title="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  </a>
+                )}
+                {selectedMember.twitter && (
+                  <a
+                    href={selectedMember.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-blue-400 dark:hover:bg-blue-400/30 transition-colors"
+                    title="Twitter"
+                  >
+                    <Twitter className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Right: Content */}
+            <div className="w-full lg:w-2/3 overflow-y-auto max-h-[90vh] scrollbar-hide">
+              {/* Tabs */}
+              <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+                <div className="flex overflow-x-auto scrollbar-hide"
+                  ref={modalContentRef}
+                  onMouseDown={handleMouseDown}
+                  onMouseLeave={handleMouseLeave}
+                  onMouseUp={handleMouseUp}
+                  onMouseMove={handleMouseMove}
+                >
+                  <button
+                    onClick={() => setActiveTab("about")}
+                    className={`px-6 py-4 text-sm font-medium whitespace-nowrap ${activeTab === "about" ? "text-lime-600 dark:text-lime-300 border-b-2 border-lime-600 dark:border-lime-300" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"}`}
+                  >
+                    About
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("expertise")}
+                    className={`px-6 py-4 text-sm font-medium whitespace-nowrap ${activeTab === "expertise" ? "text-lime-600 dark:text-lime-300 border-b-2 border-lime-600 dark:border-lime-300" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"}`}
+                  >
+                    Expertise
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("achievements")}
+                    className={`px-6 py-4 text-sm font-medium whitespace-nowrap ${activeTab === "achievements" ? "text-lime-600 dark:text-lime-300 border-b-2 border-lime-600 dark:border-lime-300" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"}`}
+                  >
+                    Achievements
+                  </button>
+                  {selectedMember.events.length > 0 && (
+                    <button
+                      onClick={() => setActiveTab("events")}
+                      className={`px-6 py-4 text-sm font-medium whitespace-nowrap ${activeTab === "events" ? "text-lime-600 dark:text-lime-300 border-b-2 border-lime-600 dark:border-lime-300" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"}`}
+                    >
+                      Events
+                    </button>
+                  )}
+                  {selectedMember.memberships && (
+                    <button
+                      onClick={() => setActiveTab("memberships")}
+                      className={`px-6 py-4 text-sm font-medium whitespace-nowrap ${activeTab === "memberships" ? "text-lime-600 dark:text-lime-300 border-b-2 border-lime-600 dark:border-lime-300" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"}`}
+                    >
+                      Memberships
+                    </button>
+                  )}
+                  <button
+                    onClick={() => setActiveTab("contact")}
+                    className={`px-6 py-4 text-sm font-medium whitespace-nowrap ${activeTab === "contact" ? "text-lime-600 dark:text-lime-300 border-b-2 border-lime-600 dark:border-lime-300" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"}`}
+                  >
+                    Contact
+                  </button>
                 </div>
+              </div>
 
-                {/* Background */}
-                {selectedMember.background && (
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <Users className="w-5 h-5 text-lime-300 dark:text-lime-300" />
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                        Background
+              {/* Tab content */}
+              <div className="p-8 space-y-8">
+                {/* About tab */}
+                {activeTab === "about" && (
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <BookOpen className="w-5 h-5 text-lime-300" />
+                        Professional Overview
                       </h3>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {selectedMember.description}
+                      </p>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {selectedMember.background}
-                    </p>
+
+                    {selectedMember.background && (
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                          <Users className="w-5 h-5 text-lime-300" />
+                          Background
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                          {selectedMember.background}
+                        </p>
+                      </div>
+                    )}
+
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <Briefcase className="w-5 h-5 text-lime-300" />
+                        Experience
+                      </h3>
+                      <div className="bg-lime-50 dark:bg-lime-900/20 rounded-lg p-4 inline-block">
+                        <span className="text-lime-700 dark:text-lime-300 font-medium">
+                          {selectedMember.experience} of professional experience
+                        </span>
+                      </div>
+                    </div>
+
+                    {selectedMember.interests && (
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                          <Sparkles className="w-5 h-5 text-lime-300" />
+                          Personal Interests
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedMember.interests.map((interest, idx) => (
+                            <span
+                              key={idx}
+                              className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-full"
+                            >
+                              {interest}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 
-                {/* Expertise */}
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <Briefcase className="w-5 h-5 text-lime-300 dark:text-lime-300" />
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                {/* Expertise tab */}
+                {activeTab === "expertise" && (
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                      <Briefcase className="w-5 h-5 text-lime-300" />
                       Areas of Expertise
                     </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedMember.expertise.map((skill, idx) => (
+                        <div
+                          key={idx}
+                          className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 flex items-start gap-3"
+                        >
+                          <div className="bg-lime-100 dark:bg-lime-900/30 p-2 rounded-full">
+                            <ChevronRight className="w-4 h-4 text-lime-600 dark:text-lime-300" />
+                          </div>
+                          <span className="text-gray-700 dark:text-gray-300">
+                            {skill}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedMember.expertise.map((skill, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-lime-300 dark:bg-lime-300/30 text-lime-300 dark:text-lime-300 text-sm rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                )}
 
-                {/* Achievements */}
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <Award className="w-5 h-5 text-lime-300 dark:text-lime-300" />
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                {/* Achievements tab */}
+                {activeTab === "achievements" && (
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                      <Award className="w-5 h-5 text-lime-300" />
                       Key Achievements
                     </h3>
+                    <ul className="space-y-4">
+                      {selectedMember.achievements.map((ach, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-4 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg"
+                        >
+                          <div className="bg-lime-100 dark:bg-lime-900/30 p-1 rounded-full mt-1 flex-shrink-0">
+                            <Star className="w-3 h-3 text-lime-600 dark:text-lime-300" />
+                          </div>
+                          <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                            {ach}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-2">
-                    {selectedMember.achievements.map((ach, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
-                      >
-                        <div className="w-1.5 h-1.5 bg-lime-300 dark:bg-lime-300 rounded-full mt-2 flex-shrink-0" />
-                        <span className="text-sm leading-relaxed">{ach}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                )}
 
-                {/* Events */}
-                {selectedMember.events.length > 0 && (
+                {/* Events tab */}
+                {activeTab === "events" && selectedMember.events.length > 0 && (
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <Calendar className="w-5 h-5 text-lime-300 dark:text-lime-300" />
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                        Events & Forums
-                      </h3>
-                    </div>
-                    <ul className="space-y-2">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                      <Calendar className="w-5 h-5 text-lime-300" />
+                      Events & Forums
+                    </h3>
+                    <ul className="space-y-4">
                       {selectedMember.events.map((event, idx) => (
                         <li
                           key={idx}
-                          className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
+                          className="flex items-start gap-4 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg"
                         >
-                          <div className="w-1.5 h-1.5 bg-lime-300 dark:bg-lime-300 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-sm leading-relaxed">
+                          <div className="bg-lime-100 dark:bg-lime-900/30 p-1 rounded-full mt-1 flex-shrink-0">
+                            <ChevronRight className="w-3 h-3 text-lime-600 dark:text-lime-300" />
+                          </div>
+                          <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
                             {event}
                           </span>
                         </li>
@@ -543,45 +708,83 @@ const OurTeamSection: React.FC = () => {
                   </div>
                 )}
 
-                {/* Memberships */}
-                {selectedMember.memberships && (
+                {/* Memberships tab */}
+                {activeTab === "memberships" && selectedMember.memberships && (
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <Globe className="w-5 h-5 text-lime-300 dark:text-lime-300" />
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                        Professional Memberships
-                      </h3>
-                    </div>
-                    <ul className="space-y-2">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                      <Globe className="w-5 h-5 text-lime-300" />
+                      Professional Memberships
+                    </h3>
+                    <ul className="space-y-4">
                       {selectedMember.memberships.map((m, idx) => (
                         <li
                           key={idx}
-                          className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
+                          className="flex items-start gap-4 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg"
                         >
-                          <div className="w-1.5 h-1.5 bg-lime-300 dark:bg-lime-300 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-sm leading-relaxed">{m}</span>
+                          <div className="bg-lime-100 dark:bg-lime-900/30 p-1 rounded-full mt-1 flex-shrink-0">
+                            <ChevronRight className="w-3 h-3 text-lime-600 dark:text-lime-300" />
+                          </div>
+                          <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                            {m}
+                          </span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 )}
-                {/* Contact */}
-                {selectedMember.email && (
+
+                {/* Contact tab */}
+                {activeTab === "contact" && (
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <Mail className="w-5 h-5 text-lime-300 dark:text-lime-300" />
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                        Contact
-                      </h3>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                      <Mail className="w-5 h-5 text-lime-300" />
+                      Contact Information
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg">
+                        <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+                          Email
+                        </h4>
+                        <a
+                          href={`mailto:${selectedMember.email}`}
+                          className="text-lime-600 dark:text-lime-300 hover:underline"
+                        >
+                          {selectedMember.email}
+                        </a>
+                      </div>
+
+                      {(selectedMember.linkedin || selectedMember.twitter) && (
+                        <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg">
+                          <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
+                            Social Profiles
+                          </h4>
+                          <div className="flex gap-4">
+                            {selectedMember.linkedin && (
+                              <a
+                                href={selectedMember.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                              >
+                                <Linkedin className="w-5 h-5" />
+                                <span>LinkedIn</span>
+                              </a>
+                            )}
+                            {selectedMember.twitter && (
+                              <a
+                                href={selectedMember.twitter}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-4 py-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors"
+                              >
+                                <Twitter className="w-5 h-5" />
+                                <span>Twitter</span>
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      <a
-                        href={`mailto:${selectedMember.email}`}
-                        className="text-lime-300 dark:text-lime-300 hover:underline"
-                      >
-                        {selectedMember.email}
-                      </a>
-                    </p>
                   </div>
                 )}
               </div>
