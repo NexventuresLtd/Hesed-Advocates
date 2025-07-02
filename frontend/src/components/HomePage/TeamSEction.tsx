@@ -322,11 +322,11 @@ const OurTeamSection: React.FC = () => {
                 {/* Gradient background */}
                 <div className="absolute inset-0">
                   <div className="hidden dark:block absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black" />
-                  <div className="dark:hidden absolute inset-0 bg-gradient-to-br from-green-100 via-white to-green-200" />
+                  <div className="dark:hidden absolute inset-0 bg-gray-100" />
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent dark:from-gray-900/80" />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent dark:from-gray-900/80" /> */}
 
                 {/* Hover arrow */}
                 <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -357,16 +357,16 @@ const OurTeamSection: React.FC = () => {
 
                   {/* Text */}
                   <div className="text-center mt-52">
-                    <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-1">
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-green-200 dark:text-green-300 text-sm font-medium mb-4">
+                    <p className="text-primary dark:text-green-300 text-sm font-medium mb-4">
                       {member.role}
                     </p>
-                    <p className="text-gray-200 dark:text-gray-300 text-sm leading-relaxed mb-6">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
                       {member.bio}
                     </p>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-medium hover:bg-white/20 transition-colors duration-200">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-sm rounded-full text-white text-sm font-medium hover:dark:bg-white/20 hover:bg-black/60 transition-colors duration-200">
                       <span>View Profile</span>
                       <svg
                         className="w-4 h-4"
@@ -387,7 +387,7 @@ const OurTeamSection: React.FC = () => {
                         e.stopPropagation();
                         window.location.href = `mailto:${member.email}`;
                       }}
-                      className="inline-flex items-center ml-4 gap-2 px-4 py-2 bg-green-600/40 backdrop-blur-sm rounded-full text-white text-sm font-medium hover:bg-green-600/70 transition-colors duration-200"
+                      className="inline-flex items-center ml-4 gap-2 px-4 py-2 bg-primary/60 backdrop-blur-sm rounded-full text-white text-sm font-medium hover:bg-primary/80 transition-colors duration-200"
                     >
                       <span>Contact</span>
                       <svg
