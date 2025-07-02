@@ -104,8 +104,7 @@ const OurTeamSection: React.FC = () => {
       img: "/Alain_Didier.png",
       signature: "/mysignaturewhite.png",
       email: "muhizi@hesedadvocates.com",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      linkedin: "http://linkedin.com/in/alain-didier-muhizi",
       bgLight:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=640&q=60",
       bgDark:
