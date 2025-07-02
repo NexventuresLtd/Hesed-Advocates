@@ -59,8 +59,8 @@ export const Navbar = () => {
               <span
                 className={`text-lg sm:text-2xl font-semibold sm:font-bold bg-gradient-to-r ${
                   isDarkMode
-                    ? 'from-lime-200 to-lime-400 bg-clip-text text-transparent'
-                    : 'from-lime-600 to-green-600 bg-clip-text text-transparent'
+                    ? 'from-lime-200 to-white bg-clip-text text-transparent'
+                    : 'text-accent'
                 }`}
               >
                 Hesed Advocates Ltd
@@ -103,8 +103,8 @@ export const Navbar = () => {
               href="/contact"
               className={`ml-4 px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg ${
                 isDarkMode
-                  ? 'bg-gradient-to-r from-lime-400 to-green-500 text-black hover:from-lime-300 hover:to-green-400'
-                  : 'bg-gradient-to-r from-lime-600 to-green-600 text-white hover:from-lime-700 hover:to-green-700'
+                  ? 'bg-gradient-to-r from-white to-lime-300 text-black'
+                  : 'bg-gradient-to-r from-white to-lime-300 text-black'
               }`}
             >
               Book a Consultation

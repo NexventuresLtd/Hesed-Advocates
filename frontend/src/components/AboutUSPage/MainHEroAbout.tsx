@@ -1,4 +1,4 @@
-import { Heart, Briefcase, Users, FileText } from 'lucide-react';
+import { Heart} from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -41,7 +41,7 @@ export default function HeroSection() {
 
             
             {/* Stats */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6">
+            {/* <div className="flex flex-wrap justify-center lg:justify-start gap-6">
               {[
                 { icon: <Briefcase className="w-6 h-6" />, value: "30+", label: "Years Experience" },
                 { icon: <Users className="w-6 h-6" />, value: "200+", label: "Clients Served" },
@@ -57,15 +57,14 @@ export default function HeroSection() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
           
           {/* Image Section */}
           <div className="relative hidden lg:block">
             <div className="relative bg-white/70 dark:bg-gray-800/50 backdrop-blur-md rounded-3xl p-2 border border-gray-200 dark:border-gray-700 transition-colors duration-500">
               <img 
-                src="https://www.shutterstock.com/image-photo/portrait-black-woman-meeting-colleagues-600nw-2473319823.jpg" 
-                alt="Legal team collaborating"
+                src="/slide (2).jpg"
                 className="w-full h-[500px] object-cover rounded-2xl"
               />
               

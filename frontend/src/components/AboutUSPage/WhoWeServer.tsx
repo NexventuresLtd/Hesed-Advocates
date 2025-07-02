@@ -45,12 +45,12 @@ export default function ClientsSection() {
     <section className="relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950/80 z-0"></div>
-      <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary/5 dark:bg-primary/10 blur-3xl z-0"></div>
+      <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary/9 dark:bg-primary/90 blur-3xl z-0"></div>
 
       <div className="relative max-w-full md:max-w-11/12 mx-auto z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-400 px-4 py-2 rounded-full text-sm font-medium border border-primary/20 dark:border-primary/30 mb-6 mx-auto transition-colors duration-300">
+          <div className="inline-flex items-center gap-2 bg-primary/90 dark:bg-primary/90 text-primary dark:text-primary-400 px-4 py-2 rounded-full text-sm font-medium border border-primary/90 dark:border-primary/90 mb-6 mx-auto transition-colors duration-300">
             <Users className="w-4 h-4" />
             Client Focus
           </div>
@@ -67,10 +67,10 @@ export default function ClientsSection() {
           {clientTypes.map((client, index) => (
             <div 
               key={index} 
-              className="group bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-primary/50 dark:hover:border-primary/400"
+              className="group bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-primary/90 dark:hover:border-primary/400"
             >
               {/* Icon with subtle background */}
-              <div className="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors duration-300">
+              <div className="w-12 h-12 bg-primary/10 dark:bg-primary/90 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/90 dark:group-hover:bg-primary/90 transition-colors duration-300">
                 {client.icon}
               </div>
               

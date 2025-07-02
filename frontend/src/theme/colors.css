@@ -1,17 +1,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #00FF00;      /* Your bright green-yellow */
-  --color-background: #ffff;   /* White background */
+  --color-primary: #97aa1a;      /* Your bright green-yellow */
+  --color-background: #ffffff;   /* White background */
   --color-text: #000000;         /* Black text */
   --color-muted: #a0a0a0;        /* Gray for muted text or borders */
   --color-accent: #b4c556;       /* Slightly darker accent */
 }
 
 .dark {
-  --color-primary: #00FF00;      /* A softer green for dark bg */
+  --color-primary: #aabb33;      /* A softer green for dark bg */
   --color-background: #121212;   /* Very dark background */
   --color-text: #f5f5f5;         /* Near-white text */
-  --color-muted: #bdbdbd;        /* Dark gray for muted elements */
-  --color-accent: #67dc39;       /* Brighter accent */
+  --color-muted: #555555;        /* Dark gray for muted elements */
+  --color-accent: #cddc39;       /* Brighter accent */
 }
