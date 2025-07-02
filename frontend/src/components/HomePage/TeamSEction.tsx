@@ -105,6 +105,7 @@ const OurTeamSection: React.FC = () => {
       signature: "/mysignaturewhite.png",
       email: "muhizi@hesedadvocates.com",
       linkedin: "http://linkedin.com/in/alain-didier-muhizi",
+      // twitter: "https://twitter.com",
       bgLight:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=640&q=60",
       bgDark:
@@ -147,7 +148,7 @@ const OurTeamSection: React.FC = () => {
       role: "Executive Partner",
       bio: "Intellectual Property Expert | Certified Private Notary | Strategic Legal Advisor",
       email: "mwiseneza@hesedadvocates.com",
-      linkedin: "https://linkedin.com",
+      // linkedin: "https://linkedin.com",
       img: "/Alain_Fabrice.png",
       bgLight:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=640&q=60",
