@@ -26,7 +26,7 @@ const CallToAction: React.FC = () => {
           <div className="w-full lg:w-1/2 relative group">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src="https://media.istockphoto.com/id/1477032948/photo/black-man-leadership-and-corporate-meeting-in-office-with-executive-management-investor.jpg?s=612x612&w=0&k=20&c=RLsQWEsvlsQ5XEWR91DXJXp1Po2pKZhSnqIg3aXbbQ0="
+                src="/slide (2).jpg"
                 alt="Professional legal consultation"
                 className="w-full h-auto aspect-[4/3] object-cover transform transition-transform duration-700 group-hover:scale-105"
               />
@@ -62,7 +62,7 @@ const CallToAction: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={goToContact}
-                className="cursor-pointer px-8 py-4 bg-gradient-to-r from-lime-400 to-green-500 hover:from-lime-500 hover:to-green-600 dark:from-lime-600 dark:to-green-700 dark:hover:from-lime-700 dark:hover:to-green-800 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                className="cursor-pointer px-8 py-4 bg-gradient-to-r from-white to-lime-300 dark:from-white dark:to-lime-300 text-gray-700 font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
               >
                 Schedule Consultation
               </button>

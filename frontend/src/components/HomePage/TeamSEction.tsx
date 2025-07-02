@@ -40,7 +40,7 @@ const OurTeamSection: React.FC = () => {
       role: 'Managing Partner',
       bio: 'Legal & Policy Expert | Business Reformer | Strategic Advisor',
       img: '/Alain_Didier.png', // portrait
-      signature: '/mysignaturewhite.png',
+      // signature: '/mysignaturewhite.png',
       bgLight:
         'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=640&q=60',
       bgDark:
@@ -314,7 +314,7 @@ const OurTeamSection: React.FC = () => {
                   </p>
                   {selectedMember.name === 'Alain Didier Muhizi' && (
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-3">
-                      As Managing Partner at Hesed Advocates Ltd, Mr. Muhizi balances professional leadership with personal interests such as reading, long walks in nature, and a strong enthusiasm for tennis.
+                      {/* As Managing Partner at Hesed Advocates Ltd, Mr. Muhizi balances professional leadership with personal interests such as reading, long walks in nature, and a strong enthusiasm for tennis. */}
                     </p>
                   )}
                 </div>

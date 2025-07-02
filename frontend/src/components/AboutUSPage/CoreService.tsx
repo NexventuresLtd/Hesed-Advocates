@@ -69,9 +69,9 @@ export default function ServicesSection() {
           {coreServices.map((service, index) => (
             <div 
               key={index} 
-              className="group bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-primary/50 dark:hover:border-primary/400"
+              className="group bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 transition-all duration-300"
             >
-              <div className="w-14 h-14 bg-primary/10 dark:bg-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors duration-300">
+              <div className="w-14 h-14 bg-primary/10 dark:bg-primary/90 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 dark:group-hover:bg-primary/90 transition-colors duration-300">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 transition-colors duration-300">
@@ -95,7 +95,7 @@ export default function ServicesSection() {
                 Supporting services to enhance your legal strategy
               </p>
             </div>
-            <div className="flex items-center gap-2 bg-primary/5 dark:bg-primary/10 px-4 py-2 rounded-full border border-primary/20 dark:border-primary/30">
+            <div className="flex items-center gap-2 bg-primary/5 dark:bg-primary/10 px-4 py-2 rounded-full border border-primary/20 dark:border-primary/80">
               <ClipboardList className="w-5 h-5 text-primary dark:text-primary-400" />
               <span className="text-sm font-medium text-primary dark:text-primary-400">8 Specialized Services</span>
             </div>
@@ -105,9 +105,9 @@ export default function ServicesSection() {
             {complementaryServices.map((service, index) => (
               <div 
                 key={index} 
-                className="flex items-center gap-3 p-4 bg-white/50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600 transition-colors duration-300 hover:border-primary/50 dark:hover:border-primary/400"
+                className="flex items-center gap-3 p-4 bg-white/50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600 transition-colors duration-300 hover:border-primary/90 dark:hover:border-primary/400"
               >
-                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/100 dark:bg-primary/20 rounded-full flex items-center justify-center">
                   <CheckCircle className="w-4 h-4 text-primary dark:text-primary-400" />
                 </div>
                 <span className="text-gray-800 dark:text-gray-200 font-medium transition-colors duration-300">

@@ -5,17 +5,17 @@ const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
+    // {
+    //   light: '/slide (1).jpg',
+    //   dark: '/slide (1).jpg'
+    // },
     {
-      light: 'https://www.burgerhuyserattorneys.co.za/wp-content/uploads/2025/02/intellectual-property-lawyer-cost.jpg',
-      dark: 'https://www.burgerhuyserattorneys.co.za/wp-content/uploads/2025/02/intellectual-property-lawyer-cost.jpg'
+      light: '/slide (2).jpg',
+      dark: '/slide (2).jpg'
     },
     {
-      light: 'https://pmattorneys.co.za/wp-content/uploads/2022/04/COMMERCIAL-LAW-ATTORNEYS.jpg',
-      dark: 'https://pmattorneys.co.za/wp-content/uploads/2022/04/COMMERCIAL-LAW-ATTORNEYS.jpg'
-    },
-    {
-      light: 'https://pdxsigning.com/wp-content/uploads/2022/05/image-2.png',
-      dark: 'https://pdxsigning.com/wp-content/uploads/2022/05/image-2.png'
+      light: '/slide (3).jpg',
+      dark: '/slide (3).jpg'
     }
   ];
 
@@ -81,7 +81,7 @@ const Hero = () => {
             {/* Book Consultation Button */}
             <button
               onClick={goToContact}
-              className="group bg-gradient-to-r from-lime-400 to-green-500 hover:from-lime-800 hover:to-green-600 dark:from-lime-600 dark:to-green-700 dark:hover:from-lime-700 dark:hover:to-green-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg cursor-pointer hover:shadow-xl"
+              className="group bg-gradient-to-r from-white to-lime-300  dark:from-white dark:to-lime-300 text-gray-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg cursor-pointer hover:shadow-xl"
             >
               <BookOpenCheck className="w-5 h-5" />
               Book Consultation
