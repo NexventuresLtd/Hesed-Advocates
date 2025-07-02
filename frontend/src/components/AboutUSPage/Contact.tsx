@@ -122,7 +122,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
-                      placeholder="Munezero Christian"
+                      placeholder="your names"
                     />
                   </div>
                 </div>
@@ -143,7 +143,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
-                      placeholder="+250 788 388 652"
+                      placeholder="+250 7** *** ***"
                     />
                   </div>
                 </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
-                    placeholder="munezerochristian@gmail.com"
+                    placeholder="youremail@domain.com"
                   />
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function Contact() {
             </h3>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="group bg-gradient-to-r from-lime-600 to-lime-600 hover:from-lime-700 hover:to-lime-700 dark:from-white dark:to-lime-300 text-gray-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <button className="group bg-gradient-to-r from-white to-lime-300 dark:from-white dark:to-lime-300 text-gray-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105">
                 <div className="bg-white/20 rounded-full p-2 group-hover:scale-110 transition-transform">
                   <Phone className="w-4 h-4" />
                 </div>
