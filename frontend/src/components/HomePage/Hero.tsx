@@ -67,15 +67,14 @@ const Hero = () => {
       <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24">
         <div className="max-w-4xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            <span className="text-primary dark:text-primary-400 transition-colors duration-300">Strategic</span>{' '}
+            <span className="text-primary dark:text-primary-400 transition-colors duration-300">Protecting What Matters.</span>{' '}
             <span className="bg-gradient-to-r from-primary to-primary dark:from-primary-800 dark:to-primary-300 bg-clip-text text-transparent">
-              Legal Protection
+               Enabling What’s Next.
             </span>
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl leading-relaxed transition-colors duration-300">
-            Comprehensive legal solutions in Intellectual Property, Litigation, and Notarial Services.
-            Partner with Rwanda's most trusted legal advisors.
+            We go beyond legal services — offering trusted expertise in Intellectual Property, Litigation, Notarial Services, and Strategic Advisory grounded in legal and policy insight.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
