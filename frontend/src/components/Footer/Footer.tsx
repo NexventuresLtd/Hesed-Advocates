@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Clock, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock} from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,16 +8,27 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Logo and Description */}
           <div className="space-y-6">
-            <div className="flex items-center">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl mr-3">
-                H
-              </div>
-              <span className="text-white text-2xl font-bold">Hesed Advocates</span>
-            </div>
+          {/* Logo */}
+          <div className="flex items-center">
+            <a href="/" className="flex items-center gap-1 sm:gap-2 p-0">
+              {/* Bigger Logo Image */}
+              <img
+                src="/Hesed-Advocates.png"
+                alt="Hesed Logo"
+                className="w-8 h-12 sm:w-12 sm:h-18 rounded-lg py-2 shadow-lg object-contain"
+                // You can adjust these sizes further if needed
+              />
+              <span
+                className= "text-xl sm:text-xl font-semibold sm:font-bold text-lime-200"
+              >
+                Hesed Advocates Ltd
+              </span>
+            </a>
+          </div>
             <p className="text-gray-400 leading-relaxed">
               Providing exceptional legal services with integrity, expertise, and personalized attention.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors duration-300">
                 <Facebook className="w-5 h-5" />
               </a>
@@ -30,7 +41,7 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors duration-300">
                 <Instagram className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -87,13 +98,13 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+          <p className="text-gray-300 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Hesed Advocates Ltd. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Terms of Service</a>
-            <a href="#" className="text-gray-500 hover:text-primary transition-colors duration-300 text-sm">Disclaimer</a>
+            <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm">Privacy Policy</a>
+            <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm">Terms of Service</a>
+            <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm">Disclaimer</a>
           </div>
         </div>
       </div>

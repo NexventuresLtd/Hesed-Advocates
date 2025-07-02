@@ -42,14 +42,14 @@ const FloatingElements = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Floating shapes */}
-      <div className="absolute top-20 left-10 w-4 h-4 bg-green-300/20 rounded-full animate-float-slow"></div>
+      <div className="absolute top-20 left-10 w-4 h-4 bg-lime-300/20 rounded-full animate-float-slow"></div>
       <div className="absolute top-40 right-20 w-6 h-6 bg-blue-300/20 rounded-full animate-float-medium"></div>
       <div className="absolute bottom-32 left-20 w-3 h-3 bg-purple-300/20 rounded-full animate-float-fast"></div>
-      <div className="absolute top-60 right-40 w-5 h-5 bg-green-400/20 rounded-full animate-float-slow delay-300"></div>
+      <div className="absolute top-60 right-40 w-5 h-5 bg-lime-300/20 rounded-full animate-float-slow delay-300"></div>
       <div className="absolute bottom-40 right-10 w-4 h-4 bg-blue-400/20 rounded-full animate-float-medium delay-500"></div>
 
       {/* Geometric shapes */}
-      <div className="absolute top-32 left-1/3 w-8 h-8 border border-green-300/20 rotate-45 animate-spin-slow"></div>
+      <div className="absolute top-32 left-1/3 w-8 h-8 border border-lime-300/20 rotate-45 animate-spin-slow"></div>
       <div className="absolute bottom-48 right-1/4 w-6 h-6 border border-blue-300/20 rotate-12 animate-pulse"></div>
     </div>
   );
@@ -260,7 +260,7 @@ const OurTeamSection: React.FC = () => {
       {/* Main Section */}
       <section
         id="team"
-        className="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-green-50 dark:from-gray-950 dark:via-gray-900 dark:to-green-950 transition-all duration-500 overflow-hidden"
+        className="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-lime-30 dark:from-gray-950 dark:via-gray-900 dark:to-lime-350 transition-all duration-500 overflow-hidden"
       >
         {/* Animated background elements */}
         <FloatingElements />
@@ -274,27 +274,27 @@ const OurTeamSection: React.FC = () => {
         />
 
         {/* Mesh gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/5 to-transparent dark:via-green-400/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lime-300/5 to-transparent dark:via-lime-300/5" />
 
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-full md:max-w-11/12 m-auto">
           <div className="text-center mb-16 animate-slide-in-up">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <div className="w-12 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent animate-shimmer"></div>
-                <Sparkles className="w-4 h-4 text-green-500 animate-pulse" />
+                <div className="w-2 h-2 bg-lime-300 rounded-full animate-pulse"></div>
+                <div className="w-12 h-px bg-gradient-to-r from-transparent via-lime-300 to-transparent animate-shimmer"></div>
+                <Sparkles className="w-4 h-4 text-lime-300 animate-pulse" />
               </div>
-              <span className="text-sm font-medium tracking-widest text-green-600 dark:text-green-400 uppercase relative">
+              <span className="text-sm font-medium tracking-widest text-lime-300 dark:text-lime-300 uppercase relative">
                 Meet The Experts
-                <div className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
+                <div className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lime-300 to-transparent"></div>
               </span>
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-green-500 animate-pulse" />
-                <div className="w-12 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent animate-shimmer"></div>
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <Sparkles className="w-4 h-4 text-lime-300 animate-pulse" />
+                <div className="w-12 h-px bg-gradient-to-r from-transparent via-lime-300 to-transparent animate-shimmer"></div>
+                <div className="w-2 h-2 bg-lime-300 rounded-full animate-pulse"></div>
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-green-800 to-gray-900 dark:from-white dark:via-green-400 dark:to-white bg-clip-text text-transparent pb-6">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-lime-300 to-gray-900 dark:from-white dark:via-lime-300 dark:to-white bg-clip-text text-transparent pb-6">
               Our Distinguished Team
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
@@ -304,9 +304,9 @@ const OurTeamSection: React.FC = () => {
 
             {/* Decorative elements */}
             <div className="flex justify-center mt-8 gap-4">
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
-              <Star className="w-4 h-4 text-green-500 animate-pulse" />
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-lime-300 to-transparent"></div>
+              <Star className="w-4 h-4 text-lime-300 animate-pulse" />
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-lime-300 to-transparent"></div>
             </div>
           </div>
 
@@ -360,7 +360,7 @@ const OurTeamSection: React.FC = () => {
                     <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-primary dark:text-green-300 text-sm font-medium mb-4">
+                    <p className="text-primary dark:text-lime-300 text-sm font-medium mb-4">
                       {member.role}
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
@@ -427,7 +427,7 @@ const OurTeamSection: React.FC = () => {
               />
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 p-2 bg-green-500/70 backdrop-blur-sm rounded-full text-white hover:bg-green-500/30"
+                className="absolute top-4 right-4 p-2 bg-lime-300/70 backdrop-blur-sm rounded-full text-white hover:bg-lime-300/30"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -441,7 +441,7 @@ const OurTeamSection: React.FC = () => {
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {selectedMember.name}
                   </h2>
-                  <p className="text-lg text-green-300 dark:text-green-300 font-medium">
+                  <p className="text-lg text-lime-300 dark:text-lime-300 font-medium">
                     {selectedMember.role}
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 mt-2">
@@ -452,7 +452,7 @@ const OurTeamSection: React.FC = () => {
                 {/* About */}
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <BookOpen className="w-5 h-5 text-green-300 dark:text-green-600" />
+                    <BookOpen className="w-5 h-5 text-lime-300 dark:text-lime-300" />
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       About
                     </h3>
@@ -466,7 +466,7 @@ const OurTeamSection: React.FC = () => {
                 {selectedMember.background && (
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <Users className="w-5 h-5 text-green-300 dark:text-green-600" />
+                      <Users className="w-5 h-5 text-lime-300 dark:text-lime-300" />
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                         Background
                       </h3>
@@ -480,7 +480,7 @@ const OurTeamSection: React.FC = () => {
                 {/* Expertise */}
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <Briefcase className="w-5 h-5 text-green-300 dark:text-green-600" />
+                    <Briefcase className="w-5 h-5 text-lime-300 dark:text-lime-300" />
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       Areas of Expertise
                     </h3>
@@ -489,7 +489,7 @@ const OurTeamSection: React.FC = () => {
                     {selectedMember.expertise.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-sm rounded-full"
+                        className="px-3 py-1 bg-lime-300 dark:bg-lime-300/30 text-lime-300 dark:text-lime-300 text-sm rounded-full"
                       >
                         {skill}
                       </span>
@@ -500,7 +500,7 @@ const OurTeamSection: React.FC = () => {
                 {/* Achievements */}
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <Award className="w-5 h-5 text-green-300 dark:text-green-600" />
+                    <Award className="w-5 h-5 text-lime-300 dark:text-lime-300" />
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       Key Achievements
                     </h3>
@@ -511,7 +511,7 @@ const OurTeamSection: React.FC = () => {
                         key={idx}
                         className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
                       >
-                        <div className="w-1.5 h-1.5 bg-green-300 dark:bg-green-300 rounded-full mt-2 flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-lime-300 dark:bg-lime-300 rounded-full mt-2 flex-shrink-0" />
                         <span className="text-sm leading-relaxed">{ach}</span>
                       </li>
                     ))}
@@ -522,7 +522,7 @@ const OurTeamSection: React.FC = () => {
                 {selectedMember.events.length > 0 && (
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <Calendar className="w-5 h-5 text-green-300 dark:text-green-600" />
+                      <Calendar className="w-5 h-5 text-lime-300 dark:text-lime-300" />
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                         Events & Forums
                       </h3>
@@ -533,7 +533,7 @@ const OurTeamSection: React.FC = () => {
                           key={idx}
                           className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
                         >
-                          <div className="w-1.5 h-1.5 bg-green-300 dark:bg-green-300 rounded-full mt-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-lime-300 dark:bg-lime-300 rounded-full mt-2 flex-shrink-0" />
                           <span className="text-sm leading-relaxed">
                             {event}
                           </span>
@@ -547,7 +547,7 @@ const OurTeamSection: React.FC = () => {
                 {selectedMember.memberships && (
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <Globe className="w-5 h-5 text-green-300 dark:text-green-600" />
+                      <Globe className="w-5 h-5 text-lime-300 dark:text-lime-300" />
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                         Professional Memberships
                       </h3>
@@ -558,7 +558,7 @@ const OurTeamSection: React.FC = () => {
                           key={idx}
                           className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
                         >
-                          <div className="w-1.5 h-1.5 bg-green-500 dark:bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-lime-300 dark:bg-lime-300 rounded-full mt-2 flex-shrink-0" />
                           <span className="text-sm leading-relaxed">{m}</span>
                         </li>
                       ))}
@@ -569,7 +569,7 @@ const OurTeamSection: React.FC = () => {
                 {selectedMember.email && (
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <Mail className="w-5 h-5 text-green-300 dark:text-green-600" />
+                      <Mail className="w-5 h-5 text-lime-300 dark:text-lime-300" />
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                         Contact
                       </h3>
@@ -577,7 +577,7 @@ const OurTeamSection: React.FC = () => {
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       <a
                         href={`mailto:${selectedMember.email}`}
-                        className="text-green-600 dark:text-green-300 hover:underline"
+                        className="text-lime-300 dark:text-lime-300 hover:underline"
                       >
                         {selectedMember.email}
                       </a>
