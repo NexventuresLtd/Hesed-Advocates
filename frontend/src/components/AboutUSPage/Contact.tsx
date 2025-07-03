@@ -40,6 +40,14 @@ export default function Contact() {
     }));
   };
 
+  const handleCallClick = () => {
+    window.location.href = "tel:+250788388652"
+  }
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:info@hesedadvocates.com"
+  }
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -246,14 +254,18 @@ export default function Contact() {
             </h3>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="group bg-gradient-to-r from-white to-lime-300 dark:from-white dark:to-lime-300 text-gray-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <button
+              onClick={handleCallClick}
+              className="group bg-gradient-to-r from-white to-lime-300 dark:from-white dark:to-lime-300 text-gray-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105">
                 <div className="bg-white/20 rounded-full p-2 group-hover:scale-110 transition-transform">
                   <Phone className="w-4 h-4" />
                 </div>
                 Call Now
               </button>
 
-              <button className="group bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg transform hover:scale-105">
+              <button
+              onClick={handleEmailClick}
+              className="group bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg transform hover:scale-105">
                 <div className="bg-gradient-to-r from-lime-600/10 to-lime-600/10 dark:from-lime-300/20 dark:to-lime-300/20 rounded-full p-2 group-hover:scale-110 transition-transform">
                   <Mail className="w-4 h-4 text-lime-600 dark:text-lime-300" />
                 </div>
