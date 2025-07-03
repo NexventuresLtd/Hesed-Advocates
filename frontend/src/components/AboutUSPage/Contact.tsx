@@ -323,7 +323,7 @@ export default function Contact() {
                     Office Hours
                   </h4>
                   <p className="text-sm text-gray-900 dark:text-white">
-                    Monday – Friday: 8:00 AM – 6:00 PM
+                    Monday – Friday: 9:00 AM – 6:00 PM
                   </p>
                   <p className="text-sm text-gray-900 dark:text-white">
                     Saturday: 9:00 AM – 2:00 PM
@@ -371,7 +371,7 @@ export default function Contact() {
 
           <div className="mt-4 text-center">
             <a
-              href="https://maps.google.com/?q=Kigali,Rwanda"
+              href="https://maps.app.goo.gl/H3Nc4Ls5TyfF62Wd6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-lime-600 dark:text-lime-300 hover:text-lime-700 dark:hover:text-lime-300 font-medium transition-colors"
