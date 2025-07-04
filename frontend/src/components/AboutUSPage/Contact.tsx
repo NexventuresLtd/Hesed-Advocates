@@ -1,5 +1,5 @@
-import { useState} from 'react';
-import type { ChangeEvent, FormEvent } from 'react';
+import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import {
   Phone,
   Mail,
@@ -9,7 +9,7 @@ import {
   Send,
   User,
   MessageSquare,
-} from 'lucide-react';
+} from "lucide-react";
 
 interface FormData {
   name: string;
@@ -21,11 +21,11 @@ interface FormData {
 
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,42 +34,57 @@ export default function Contact() {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
   const handleCallClick = () => {
-    window.location.href = "tel:+250788388652"
-  }
+    window.location.href = "tel:+250788388652";
+  };
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:info@hesedadvocates.com"
-  }
+    window.location.href = "mailto:info@hesedadvocates.com";
+  };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const { name, email, subject, message } = formData;
     if (!name || !email || !subject || !message) {
-      alert('Please fill in all required fields.');
+      alert("Please fill in all required fields.");
       return;
     }
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      alert('Thank you for your message! We will get back to you soon.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
+    try {
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-      setIsSubmitting(false);
-    }, 2000);
+
+      const result = await response.json();
+      if (result.success) {
+        alert("Thank you for your message! We will get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to send message: " + result.error);
+      }
+    } catch (err) {
+      alert("Something went wrong. Try again later.");
+    }
+    setIsSubmitting(false);
   };
 
   return (
@@ -87,7 +102,7 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
-            Let&apos;s Begin Your{' '}
+            Let&apos;s Begin Your{" "}
             <span className="bg-gradient-to-r from-lime-300 to-lime-200 dark:from-white dark:to-lime-300 bg-clip-text text-transparent">
               Legal Journey
             </span>
@@ -255,8 +270,9 @@ export default function Contact() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button
-              onClick={handleCallClick}
-              className="group bg-gradient-to-r from-white to-lime-300 dark:from-white dark:to-lime-300 text-gray-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+                onClick={handleCallClick}
+                className="group bg-gradient-to-r from-white to-lime-300 dark:from-white dark:to-lime-300 text-gray-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
                 <div className="bg-white/20 rounded-full p-2 group-hover:scale-110 transition-transform">
                   <Phone className="w-4 h-4" />
                 </div>
@@ -264,8 +280,9 @@ export default function Contact() {
               </button>
 
               <button
-              onClick={handleEmailClick}
-              className="group bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg transform hover:scale-105">
+                onClick={handleEmailClick}
+                className="group bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg transform hover:scale-105"
+              >
                 <div className="bg-gradient-to-r from-lime-600/10 to-lime-600/10 dark:from-lime-300/20 dark:to-lime-300/20 rounded-full p-2 group-hover:scale-110 transition-transform">
                   <Mail className="w-4 h-4 text-lime-600 dark:text-lime-300" />
                 </div>
@@ -357,10 +374,10 @@ export default function Contact() {
 
           <div className="relative rounded-xl overflow-hidden shadow-lg">
             <iframe
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5178426169064!2d30.05827367251363!3d-1.945767549056219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4223449e947%3A0x886c287774e11fe5!2sKigali%20City%20Tower%2C%20KN%202%20St%2C%20Kigali!5e0!3m2!1sen!2srw!4v1751452384022!5m2!1sen!2srw"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5178426169064!2d30.05827367251363!3d-1.945767549056219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4223449e947%3A0x886c287774e11fe5!2sKigali%20City%20Tower%2C%20KN%202%20St%2C%20Kigali!5e0!3m2!1sen!2srw!4v1751452384022!5m2!1sen!2srw"
               width="100%"
               height="400"
-              style={{ border: '0' }}
+              style={{ border: "0" }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-96"
