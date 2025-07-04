@@ -50,7 +50,7 @@ export default function ClientsSection() {
       <div className="relative max-w-full md:max-w-11/12 mx-auto z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-primary/90 dark:bg-primary/90 text-primary dark:text-primary-400 px-4 py-2 rounded-full text-sm font-medium border border-primary/90 dark:border-primary/90 mb-6 mx-auto transition-colors duration-300">
+          <div className="inline-flex items-center gap-2 bg-primary/90 dark:bg-primary/90 text-white dark:text-primary-400 px-4 py-2 rounded-full text-sm font-medium border border-primary/90 dark:border-primary/90 mb-6 mx-auto transition-colors duration-300">
             <Users className="w-4 h-4" />
             Client Focus
           </div>

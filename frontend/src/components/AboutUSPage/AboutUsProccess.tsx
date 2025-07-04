@@ -91,10 +91,12 @@ export default function ProcessSection() {
             <p className="text-gray-600 dark:text-gray-400 mb-6 transition-colors duration-300">
               We'll guide you through every step of the process.
             </p>
+          <a href="/contact">
             <button className="group bg-primary hover:bg-primary/90 dark:bg-primary-600 dark:hover:bg-primary-500 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center gap-2">
               Start Your Journey
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+          </a>
           </div>
         </div>
       </div>
