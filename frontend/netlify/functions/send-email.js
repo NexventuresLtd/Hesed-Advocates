@@ -14,8 +14,9 @@ exports.handler = async (event) => {
   });
 
   const mailOptions = {
-    from: email,
+    from: process.env.SMTP_USER,
     to: process.env.SMTP_USER,
+    replyTo: email,
     subject: `New Contact Form: ${subject}`,
     text: `
       Name: ${name}
@@ -26,6 +27,7 @@ exports.handler = async (event) => {
       ${message}
     `,
   };
+  
 
   try {
     await transporter.sendMail(mailOptions);
