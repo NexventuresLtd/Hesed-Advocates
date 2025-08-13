@@ -4,7 +4,7 @@ export default function RwandaWoodForumPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-500">
       {/* Header Section */}
-      <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[url('https://cdn1.img.sputniknews.africa/img/07e9/07/15/1075802418_0:67:1280:787_1920x0_80_0_0_bbd28bb29d7e2f0afba58ec159bc2cf7.jpg')] bg-cover">
+      <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[url('https://wildafrica.org/wp-content/uploads/2025/06/HEALTHY-FOREST-03-scaled-1920x960.jpg')] bg-cover">
         {/* Background elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/60 dark:from-gray-900 dark:to-gray-950/60"></div>
         <div className="hidden lg:block absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary/5 dark:bg-primary/10 blur-3xl"></div>
