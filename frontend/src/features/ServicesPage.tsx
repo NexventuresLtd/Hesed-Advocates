@@ -261,7 +261,7 @@ const ServicesComponent = () => {
 
   return (
     <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto" id='offer'>
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-400 px-4 py-2 rounded-full text-sm font-medium border border-primary/20 dark:border-primary/30 mb-6 mx-auto">

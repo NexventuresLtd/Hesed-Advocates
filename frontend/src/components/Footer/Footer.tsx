@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Clock} from 'lucide-react';
+import { MapPin, Mail, Phone, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,23 +8,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Logo and Description */}
           <div className="space-y-6">
-          {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="flex items-center gap-1 sm:gap-2 p-0">
-              {/* Bigger Logo Image */}
-              <img
-                src="/Hesed-Advocates.png"
-                alt="Hesed Logo"
-                className="w-8 h-12 sm:w-12 sm:h-18 rounded-lg py-2 shadow-lg object-contain"
+            {/* Logo */}
+            <div className="flex items-center">
+              <a href="/" className="flex items-center gap-1 sm:gap-2 p-0">
+                {/* Bigger Logo Image */}
+                <img
+                  src="/Hesed-Advocates.png"
+                  alt="Hesed Logo"
+                  className="w-8 h-12 sm:w-12 sm:h-18 rounded-lg py-2 shadow-lg object-contain"
                 // You can adjust these sizes further if needed
-              />
-              <span
-                className= "text-xl sm:text-xl font-semibold sm:font-bold text-lime-200"
-              >
-                Hesed Advocates Ltd
-              </span>
-            </a>
-          </div>
+                />
+                <span
+                  className="text-xl sm:text-xl font-semibold sm:font-bold text-lime-200"
+                >
+                  Hesed Advocates Ltd
+                </span>
+              </a>
+            </div>
             <p className="text-gray-400 leading-relaxed">
               Providing exceptional legal services with integrity, expertise, and personalized attention.
             </p>
@@ -52,6 +52,7 @@ const Footer = () => {
               <li><a href="/about" className="text-gray-400 hover:text-primary transition-colors duration-300">About Us</a></li>
               <li><a href="/#services" className="text-gray-400 hover:text-primary transition-colors duration-300">Services</a></li>
               <li><a href="/#team" className="text-gray-400 hover:text-primary transition-colors duration-300">Our Team</a></li>
+              <li><a href="/events" className="text-gray-400 hover:text-primary transition-colors duration-300">Events</a></li>
               <li><a href="/contact" className="text-gray-400 hover:text-primary transition-colors duration-300">Contact</a></li>
             </ul>
           </div>
@@ -60,12 +61,12 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-white text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">Intellectual Property</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">Litigation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">Corporate Law</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">Private Notary</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">Legal Advisory</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">Policy Consulting</a></li>
+              <li><a href="/services/#offer" className="text-gray-400 hover:text-primary transition-colors duration-300">Intellectual Property</a></li>
+              <li><a href="/services/#offer" className="text-gray-400 hover:text-primary transition-colors duration-300">Litigation</a></li>
+              <li><a href="/services/#offer" className="text-gray-400 hover:text-primary transition-colors duration-300">Corporate Law</a></li>
+              <li><a href="/services/#offer" className="text-gray-400 hover:text-primary transition-colors duration-300">Private Notary</a></li>
+              <li><a href="/services/#offer" className="text-gray-400 hover:text-primary transition-colors duration-300">Legal Advisory</a></li>
+              <li><a href="/services/#offer" className="text-gray-400 hover:text-primary transition-colors duration-300">Policy Consulting</a></li>
             </ul>
           </div>
 

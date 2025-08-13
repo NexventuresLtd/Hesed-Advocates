@@ -5,6 +5,7 @@ import AboutPage from '../features/AboutPage';
 import OurTeamSection from '../components/HomePage/TeamSEction';
 import ServicesComponent from '../features/ServicesPage';
 import Contact from '../components/AboutUSPage/Contact';
+import RwandaWoodForumPage from '../components/EventsPage/EventsPage';
 
 export const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
         <Route path="about" element={<AboutPage />} />
         <Route path="services" element={<ServicesComponent />} />
         <Route path="contact" element={<Contact/>} />
+        <Route path="events" element={<RwandaWoodForumPage/>} />
         {/* Add more routes as needed */}
       </Route>
     </Routes>
