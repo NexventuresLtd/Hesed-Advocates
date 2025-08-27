@@ -114,11 +114,17 @@ const OurTeamSection: React.FC = () => {
       description:
         "Mr. Alain Didier Muhizi is a legal and policy expert with over 10 years of experience advancing business‑friendly reforms in Rwanda. He has contributed to the development and revision of several key laws—most notably in the areas of labor, company, procurement, tax, and insolvency. In addition to legal practice, Alain offers strategic content development, event organization, moderation, and graphic design, delivering integrated, results‑driven solutions to institutions, businesses, and development partners.",
       achievements: [
-        "The removal of automatic contract renewal in labor law",
-        "The introduction of optional Articles of Association under the company law",
-        "An increase in the procurement threshold for works from 500 million RWF to 2 billion RWF",
-        "The reduction of EBM fines from a fixed 20 million RWF to 10 times the VAT due",
-        "The reduction of land‑plot tax from 300 RWF/m² to 80 RWF/m²",
+        "VAT Law: Replaced fixed EBM fines (RWF 5–20M) with a proportional model (10× VAT due), boosting SME compliance",
+	"Tax Policy: Prevented introduction of a 1% turnover-based Medium Alternative Tax on loss-declaring businesses",
+	"Property Tax: Merged land & commercial property taxes; cut commercial property tax from 1% to 0.2–0.5%, later fixed at 0.3%",
+	"Land Law: Reduced land tax from RWF 300/m² to 80/m²",
+	"Labor Law: Removed automatic renewal of fixed-term contracts",
+	"Procurement Law: Introduced proportionate penalties—1-year ban and 5% fine instead of 5–7-year bans",
+	"M.O Procurement: Raised thresholds from RWF 500M to 2B for goods/works, and from RWF 50M to 100M for services",
+	"Real Property Valuation: Secured a 75% minimum price rule and capped auctions at 3 sessions, replacing indefinite sales with no threshold",
+	"Judicial Reform: Introduced Small Claims Procedure for disputes under RWF 5M—no legal representation required",
+	"Trade Facilitation: Partnered with GS1 South Africa, enabling 130+ Rwandan businesses to register barcodes and access formal markets",
+	"Insurance Recovery: Recovered RWF 107M in unpaid insurance claims for garage operators",
       ],
       background:
         "As former Head of Policy Analysis and National Expert for Public‑Private Dialogue at the Private Sector Federation, Alain led high‑level consultations and served as Rwanda's private‑sector focal point in international and regional organizations including ECCAS, OACPS, and CBHI.",
