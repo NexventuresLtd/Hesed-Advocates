@@ -5,7 +5,7 @@ import AboutPage from '../features/AboutPage';
 import OurTeamSection from '../components/HomePage/TeamSEction';
 import ServicesComponent from '../features/ServicesPage';
 import Contact from '../components/AboutUSPage/Contact';
-import RwandaWoodForumPage from '../components/EventsPage/EventsPage';
+// import RwandaWoodForumPage from '../components/EventsPage/EventsPage';
 
 export const AppRoutes = () => {
   return (
